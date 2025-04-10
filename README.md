@@ -1,163 +1,138 @@
-# 🗂 Front-End Checklist
+```markdown
+# 🗂 Danh Sách Kiểm Tra Front‑End
 
-The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website /
-HTML page to production.
+Danh Sách Kiểm Tra Front‑End là danh sách đầy đủ tất cả các hạng mục bạn cần có / cần kiểm thử trước khi đưa website / trang HTML của bạn lên môi trường production.
 
-**Other Checklists:**
+**Các danh sách khác:**
 
-- [🎮 Front-End Performance Checklist](https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-)
-- [💎 Front-End Design Checklist](https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist)
+- [🎮 Danh Sách Kiểm Tra Hiệu Năng Front‑End](https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-)
+- [💎 Danh Sách Kiểm Tra Thiết Kế Front‑End](https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist)
 
 > [!TIP]
-> ⭐️ Dev-friendly UX patterns you wish you knew. 👉 [UX Patterns for Devs](https://uxpatterns.dev/en) ⭐️
+> ⭐️ Các mẫu UX thân thiện với lập trình viên mà bạn hằng mong ước. 👉 [UX Patterns for Devs](https://uxpatterns.dev/en) ⭐️
 
-## 📚 Table of Contents
+## 📚 Mục Lục
 
-- [How to use](#how-to-use)
+- [Cách sử dụng](#cach-su-dung)
 - [Head](#head)
 - [HTML](#html)
 - [Webfonts](#webfonts)
 - [CSS](#css)
 - [JavaScript](#javascript)
-- [Accessibility](#accessibility)
+- [Khả năng truy cập](#kha-nang-truy-cap)
 
-## How to use?
+## Cách sử dụng?
 
 <!-- prettier-ignore-start -->
 > [!IMPORTANT]
-> **Disclaimer:** This checklist is based on Front-End developers' years of experience, with additions from other open-source checklists.
+> **Tuyên bố từ chối trách nhiệm:** Danh sách này dựa trên nhiều năm kinh nghiệm của các lập trình viên Front‑End, với các bổ sung từ những danh sách nguồn mở khác.
 <!-- prettier-ignore-end -->
 
-All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted
-or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use
-3 levels of flexibility:
+Tất cả các mục trong **Danh Sách Kiểm Tra Front‑End** đều bắt buộc đối với đa số dự án, nhưng một số hạng mục có thể bỏ qua hoặc không thiết yếu (ví dụ một ứng dụng web quản trị có thể không cần RSS feed). Chúng tôi sử dụng 3 mức linh hoạt:
 
-- ![Low][low_img] indicates that the item is recommended but can be omitted in certain situations.
-- ![Medium][medium_img] indicates that the item is highly recommended but can potentially be omitted in very specific
-  cases. However, omitting these elements can negatively impact performance or SEO.
-- ![High][high_img] indicates that the item cannot be omitted under any circumstances. Removing these elements may
-  result in page malfunctions or cause accessibility and SEO issues. Testing should prioritize these elements first.
+- ![Low][low_img] cho biết hạng mục được khuyến nghị nhưng có thể bỏ qua trong một số tình huống.
+- ![Medium][medium_img] cho biết hạng mục rất được khuyến nghị nhưng có thể bỏ qua trong các trường hợp cực kỳ đặc biệt. Tuy nhiên, bỏ qua có thể ảnh hưởng xấu đến hiệu năng hoặc SEO.
+- ![High][high_img] cho biết hạng mục không thể bỏ qua dưới bất kỳ hoàn cảnh nào. Loại bỏ có thể gây lỗi trang hoặc vấn đề về khả năng truy cập và SEO. Việc kiểm thử nên ưu tiên các hạng mục này trước.
 
-Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
+Một số tài nguyên có biểu tượng cảm xúc giúp bạn hiểu loại nội dung / trợ giúp có thể tìm thấy trong danh sách:
 
-- 📖: documentation or article
-- 🛠: online tool / testing tool
-- 📹: media or video content
+- 📖: tài liệu hoặc bài viết
+- 🛠: công cụ trực tuyến / công cụ kiểm thử
+- 📹: nội dung media hoặc video
 
 ## Head
 
 <!-- prettier-ignore-start -->
 > [!NOTE]
-> You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
+> Bạn có thể tìm [danh sách mọi thứ](https://github.com/joshbuchea/HEAD) có thể xuất hiện trong `<head>` của tài liệu HTML.
 <!-- prettier-ignore-end -->
 
-### Meta tag
+### Thẻ Meta
 
-- [ ] **Doctype:** ![High][high_img] The Doctype is HTML5 and is at the top of all your HTML pages.
+- [ ] **Doctype:** ![High][high_img] Doctype là HTML5 và nằm trên cùng của mọi trang HTML.
 
-<!-- prettier-ignore-start -->
 ```html
 <!doctype html><!-- HTML5 -->
 ```
-<!-- prettier-ignore-end -->
 
-- 📖
-  [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
+- 📖 [Xác định bộ mã ký tự – HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
 
-_The next 2 meta tags (Charset and Viewport) need to come first in the head._
+_Hai thẻ meta tiếp theo (Charset và Viewport) cần đặt đầu tiên trong head._
 
-- [ ] **Charset:** ![High][high_img] The charset (UTF-8) is declared correctly.
+- [ ] **Charset:** ![High][high_img] Charset (UTF‑8) được khai báo chính xác.
 
-<!-- prettier-ignore-start -->
 ```html
-<!-- Set character encoding for the document -->
+<!-- Thiết lập bộ mã ký tự cho tài liệu -->
 <meta charset="utf-8">
 ```
-<!-- prettier-ignore-end -->
 
-- [ ] **Viewport:** ![High][high_img] The viewport is declared correctly.
+- [ ] **Viewport:** ![High][high_img] Viewport được khai báo chính xác.
 
-<!-- prettier-ignore-start -->
 ```html
-<!-- Viewport for responsive web design -->
+<!-- Viewport cho thiết kế web đáp ứng -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 ```
-<!-- prettier-ignore-end -->
 
-- [ ] **Title:** ![High][high_img] A title is used on all pages (SEO: Google calculates the pixel width of the characters used in the title, and it cuts off between 472 and 482 pixels. The average character limit would be around 55-characters).
+- [ ] **Title:** ![High][high_img] Tiêu đề được dùng trên tất cả trang (SEO: Google tính bề rộng pixel của tiêu đề và cắt ở khoảng 472–482 px, giới hạn ~55 ký tự).
 
 ```html
-<!-- Document Title -->
-<title>Page Title less than 55 characters</title>
+<!-- Tiêu đề tài liệu -->
+<title>Tên trang dưới 55 ký tự</title>
 ```
 
-- 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+- 📖 [Title – HTML – MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 - 🛠 [SERP Snippet Generator](https://www.sistrix.com/serp-snippet-generator/)
 
-- [ ] **Description:** ![High][high_img] A meta description is provided, it is unique and doesn't possess more than 150
-      characters.
+- [ ] **Description:** ![High][high_img] Thẻ meta description được cung cấp, duy nhất và không quá 150 ký tự.
 
-<!-- prettier-ignore-start -->
 ```html
 <!-- Meta Description -->
-<meta name="description" content="Description of the page less than 150 characters">
+<meta name="description" content="Mô tả trang dưới 150 ký tự">
 ```
-<!-- prettier-ignore-end -->
 
-- 📖
-  [Meta Description - HTML - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description)
+- 📖 [Meta Description – HTML – MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description)
 
-- [ ] **Favicons:** ![Medium][medium_img] Each favicon has been created and displays correctly. If you have only a
-      `favicon.ico`, put it at the root of your site. Normally you won't need to use any markup. However, it's still
-      good practice to link to it using the example below. Today, **PNG format is recommended** over `.ico` format
-      (dimensions: 32x32px).
+- [ ] **Favicons:** ![Medium][medium_img] Mỗi favicon được tạo và hiển thị đúng. Nếu chỉ có `favicon.ico`, đặt ở gốc site. Thường không cần markup nhưng vẫn nên liên kết như ví dụ dưới. **PNG được khuyến nghị** hơn `.ico` (kích thước 32x32px).
 
-<!-- prettier-ignore-start -->
 ```html
-<!-- Standard favicon -->
+<!-- Favicon chuẩn -->
 <link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
-<!-- Recommended favicon format -->
+<!-- Định dạng favicon khuyến nghị -->
 <link rel="icon" type="image/png" href="https://example.com/favicon.png">
-<!-- Recommended modern favicon format (not recommended for legacy browsers) -->
+<!-- Favicon hiện đại (không khuyến nghị cho trình duyệt cũ) -->
 <link rel="icon" type="image/svg+xml" href="https://example.com/favicon.svg">
 ```
-<!-- prettier-ignore-end -->
 
 - 🛠 [Favicon Generator](https://www.favicon-generator.org/)
 - 🛠 [RealFaviconGenerator](https://realfavicongenerator.net/)
 - 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
-- 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
-- 📖 [PNG favicons - caniuse](https://caniuse.com/link-icon-png)
+- 📖 [Favicons, Touch Icons, Tile Icons, v.v. Bạn cần gì? – CSS Tricks](https://css-tricks.com/favicon-quiz/)
+- 📖 [PNG favicons – caniuse](https://caniuse.com/link-icon-png)
 
-- [ ] **Apple Web App Meta:** ![Low][low_img] Apple meta-tags are present.
+- [ ] **Apple Web App Meta:** ![Low][low_img] Thẻ meta dành cho Apple có mặt.
 
-<!-- prettier-ignore-start -->
 ```html
-<!-- Apple Touch Icon (at least 200x200px) -->
+<!-- Apple Touch Icon (ít nhất 200x200px) -->
 <link rel="apple-touch-icon" href="/custom-icon.png">
 
-<!-- To run the web application in full-screen -->
+<!-- Chạy ứng dụng web ở chế độ toàn màn hình -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<!-- Status Bar Style (see Supported Meta Tags below for available values) -->
-<!-- Has no effect unless you have the previous meta tag -->
+<!-- Kiểu thanh trạng thái -->
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 ```
-<!-- prettier-ignore-end -->
 
 - 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 - 📖 [Supported Meta Tags](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 
-- [ ] **Windows Tiles:** ![Low][low_img] Windows tiles are present and linked.
+- [ ] **Windows Tiles:** ![Low][low_img] Windows tiles có mặt và được liên kết.
 
-<!-- prettier-ignore-start -->
 ```html
 <!-- Microsoft Tiles -->
 <meta name="msapplication-config" content="browserconfig.xml">
 ```
-<!-- prettier-ignore-end -->
 
-Minimum required xml markup for the `browserconfig.xml` file is as follows:
+Đoạn markup XML tối thiểu cho `browserconfig.xml`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -173,35 +148,27 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 </browserconfig>
 ```
 
-<!-- prettier-ignore-start -->
 - 📖 [Browser configuration schema reference](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn320426(v=vs.85))
-<!-- prettier-ignore-end -->
 
-- [ ] **Canonical:** ![Medium][medium_img] Use `rel="canonical"` to avoid duplicate content.
+- [ ] **Canonical:** ![Medium][medium_img] Sử dụng `rel="canonical"` để tránh nội dung trùng lặp.
 
-<!-- prettier-ignore-start -->
 ```html
-<!-- Helps prevent duplicate content issues -->
+<!-- Tránh vấn đề nội dung trùng lặp -->
 <link rel="canonical" href="http://example.com/2017/09/a-new-article-to-read.html">
 ```
-<!-- prettier-ignore-end -->
 
-- 📖
-  [Use canonical URLs - Search Console Help - Google Support](https://support.google.com/webmasters/answer/139066?hl=en)
-- 📖
-  [5 common mistakes with rel=canonical - Google Webmaster Blog](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
+- 📖 [Sử dụng canonical URLs – Google Support](https://support.google.com/webmasters/answer/139066?hl=vi)
+- 📖 [5 sai lầm phổ biến với rel=canonical – Google Webmaster Blog](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
 
-### HTML tags
+### Thẻ HTML
 
-- [ ] **Language attribute:** ![High][high_img] The `lang` attribute of your website is specified and related to the
-      language of the current page.
+- [ ] **Thuộc tính ngôn ngữ:** ![High][high_img] Thuộc tính `lang` của website được chỉ định phù hợp với ngôn ngữ trang hiện tại.
 
 ```html
 <html lang="en"></html>
 ```
 
-- [ ] **Direction attribute:** ![Medium][medium_img] The direction of lecture is specified on the html tag (It can be
-      used on another HTML tag).
+- [ ] **Thuộc tính hướng:** ![Medium][medium_img] Hướng đọc được chỉ định trên thẻ html (có thể dùng trên thẻ HTML khác).
 
 ```html
 <html dir="rtl">
@@ -209,645 +176,541 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 </html>
 ```
 
-- 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
+- 📖 [dir – HTML – MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
 
-- [ ] **Alternate language:** ![Low][low_img] The language tag of your website is specified and related to the language
-      of the current page.
+- [ ] **Ngôn ngữ thay thế:** ![Low][low_img] Thẻ ngôn ngữ thay thế được chỉ định phù hợp.
 
-<!-- prettier-ignore-start -->
 ```html
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
 ```
-<!-- prettier-ignore-end -->
 
-- [ ] **x-default:** ![Low][low_img] The language tag of your website for international landing pages.
+- [ ] **x-default:** ![Low][low_img] Thẻ ngôn ngữ cho trang đích quốc tế.
 
 ```html
 <link rel="alternate" href="https://example.com/" hreflang="x-default" />
 ```
 
-- 📖 [x-default - Google](https://webmasters.googleblog.com/2013/04/x-default-hreflang-for-international-pages.html)
+- 📖 [x-default – Google](https://webmasters.googleblog.com/2013/04/x-default-hreflang-for-international-pages.html)
 
-- [ ] **Conditional comments:** ![Low][low_img] Conditional comments are present for IE if needed.
+- [ ] **Conditional comments:** ![Low][low_img] Conditional comments cho IE nếu cần.
 
-- 📖
-  [About conditional comments (Internet Explorer) - MSDN - Microsoft](<https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx>)
+- 📖 [About conditional comments (Internet Explorer) – MSDN](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
 
-- [ ] **RSS feed:** ![Low][low_img] If your project is a blog or has articles, an RSS link was provided.
+- [ ] **RSS feed:** ![Low][low_img] Nếu dự án là blog hoặc có bài viết, liên kết RSS được cung cấp.
 
-- [ ] **CSS Critical:** ![Medium][medium_img] The CSS critical (or "above the fold") collects all the CSS used to render
-      the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a
-      single line (minified).
+- [ ] **CSS Critical:** ![Medium][medium_img] CSS quan trọng ("above the fold") chứa toàn bộ CSS cần để render phần nhìn thấy của trang. Được nhúng trước CSS chính và giữa `<style></style>` dưới dạng một dòng (đã nén).
 
-- 🛠 [Critical by Addy Osmani on GitHub](https://github.com/addyosmani/critical) automates this.
+- 🛠 [Critical by Addy Osmani](https://github.com/addyosmani/critical) tự động hóa việc này.
 
-- [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except the
-      case where sometimes JS files are loaded asynchronously on top of your page).
+- [ ] **Thứ tự CSS:** ![High][high_img] Tất cả file CSS được tải trước bất kỳ file JavaScript nào trong `<head>` (trừ khi JS được load async ở đầu trang).
 
 ### Social meta
 
-Visualize and generate automatically our social meta tags with [Meta Tags](https://metatags.io/)
+Tạo và xem trước tự động thẻ social meta bằng [Meta Tags](https://metatags.io/)
 
-**_Facebook OG_** and **_Twitter Cards_** are, for any website, highly recommended. The other social media tags can be
-considered if you target a particular presence on those and want to ensure the display.
+**_Facebook OG_** và **_Twitter Cards_** được khuyến nghị cao. Các thẻ mạng xã hội khác xem xét khi bạn nhắm đến nền tảng đó.
 
-- [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with
-      false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended.
+- [ ] **Facebook Open Graph:** ![Low][low_img] Tất cả thẻ OG được kiểm thử, không thiếu hoặc sai. Ảnh ít nhất 600 × 315 px, khuyến nghị 1200 × 630 px.
 
-<!-- prettier-ignore-start -->
 > [!NOTE]
-> Using `og:image:width` and `og:image:height` will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.
-<!-- prettier-ignore-end -->
+> Sử dụng `og:image:width` và `og:image:height` để khai báo kích thước ảnh giúp crawler render ngay mà không tải bất đồng bộ.
 
-<!-- prettier-ignore-start -->
 ```html
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://example.com/page.html">
-<meta property="og:title" content="Content Title">
+<meta property="og:title" content="Tiêu đề nội dung">
 <meta property="og:image" content="https://example.com/image.jpg">
-<meta property="og:description" content="Description Here" />
-<meta property="og:site_name" content="Site Name">
+<meta property="og:description" content="Mô tả tại đây" />
+<meta property="og:site_name" content="Tên site">
 <meta property="og:locale" content="en_US">
-<!-- Next tags are optional but recommended -->
+<!-- Thẻ tiếp theo tuỳ chọn nhưng khuyến nghị -->
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 ```
-<!-- prettier-ignore-end -->
 
 - 📖 [A Guide to Sharing for Webmasters](https://developers.facebook.com/docs/sharing/webmasters/)
-- 📖 [Best Practices - Sharing](https://developers.facebook.com/docs/sharing/best-practices/)
-- 🛠 Test your page with the [Facebook OG testing](https://developers.facebook.com/tools/debug/)
+- 📖 [Best Practices – Sharing](https://developers.facebook.com/docs/sharing/best-practices/)
+- 🛠 Kiểm thử với [Facebook OG debugger](https://developers.facebook.com/tools/debug/)
 
 - [ ] **Twitter Card:** ![Low][low_img]
 
-<!-- prettier-ignore-start -->
 ```html
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@site_account">
 <meta name="twitter:creator" content="@individual_account">
 <meta name="twitter:url" content="https://example.com/page.html">
-<meta name="twitter:title" content="Content Title">
-<meta name="twitter:description" content="Content description less than 200 characters">
+<meta name="twitter:title" content="Tiêu đề nội dung">
+<meta name="twitter:description" content="Mô tả nội dung dưới 200 ký tự">
 <meta name="twitter:image" content="https://example.com/image.jpg">
 ```
-<!-- prettier-ignore-end -->
 
-- 📖
-  [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
-- 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator)
+- 📖 [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
+- 🛠 Kiểm thử với [Twitter card validator](https://cards-dev.twitter.com/validator)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
 ## HTML
 
-### Best practices
+### Thực hành tốt
 
-- [ ] **HTML5 Semantic Elements:** ![High][high_img] HTML5 Semantic Elements are used appropriately (header, section,
-      footer, main...).
+- [ ] **Phần tử ngữ nghĩa HTML5:** ![High][high_img] Các phần tử ngữ nghĩa HTML5 được sử dụng đúng (header, section, footer, main...).
 
 - 📖 [HTML Reference](http://htmlreference.io/)
 
-- [ ] **Error pages:** ![High][high_img] Error 404 page and 5xx exist. Remember that the 5xx error pages need to have
-      their CSS integrated (no external call on the current server).
+- [ ] **Trang lỗi:** ![High][high_img] Trang lỗi 404 và 5xx tồn tại. Trang 5xx cần CSS tích hợp (không gọi ngoài server hiện tại).
 
-- [ ] **Noopener:** ![Medium][medium_img] In case you are using external links with `target="_blank"`, your link should
-      have a `rel="noopener"` attribute to prevent tab nabbing. If you need to support older versions of Firefox, use
-      `rel="noopener noreferrer"`.
+- [ ] **Noopener:** ![Medium][medium_img] Nếu dùng liên kết ngoài với `target="_blank"`, thêm `rel="noopener"` để tránh tab nabbing. Nếu cần hỗ trợ Firefox cũ, dùng `rel="noopener noreferrer"`.
 
 - 📖 [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
 
-- [ ] **Clean up comments:** ![Low][low_img] Unnecessary code needs to be removed before sending the page to production.
+- [ ] **Dọn comment:** ![Low][low_img] Mã không cần thiết bị xoá trước khi đưa lên production.
 
-### HTML testing
+### Kiểm thử HTML
 
-- [ ] **W3C compliant:** ![High][high_img] All pages need to be tested with the W3C validator to identify possible
-      issues in the HTML code.
+- [ ] **Tuân thủ W3C:** ![High][high_img] Tất cả trang được kiểm thử bằng trình xác thực W3C.
 
 - 🛠 [W3C validator](https://validator.w3.org/)
 
-- [ ] **HTML Lint:** ![High][high_img] I use tools to help me analyze any issues I could have on my HTML code.
+- [ ] **HTML Lint:** ![High][high_img] Sử dụng công cụ phân tích lỗi HTML.
 
 - 🛠 [Dirty markup](https://www.10bestdesign.com/dirtymarkup/)
-
 - 🛠 [webhint](https://webhint.io/)
 
-- [ ] **Link checker:** ![High][high_img] There are no broken links in my page, verify that you don't have any 404
-      error.
+- [ ] **Trình kiểm tra liên kết:** ![High][high_img] Không có liên kết hỏng, kiểm tra lỗi 404.
 
 - 🛠 [W3C Link Checker](https://validator.w3.org/checklink)
 
-- [ ] **Adblockers test:** ![Medium][medium_img] Your website shows your content correctly with adblockers enabled (You
-      can provide a message encouraging people to disable their adblocker).
+- [ ] **Kiểm thử adblocker:** ![Medium][medium_img] Website hiển thị nội dung đúng khi bật adblocker (có thể hiển thị thông báo).
 
-- 📖
-  [Use AdBlocking in your Dev Environment](https://andreicioara.com/use-adblocking-in-your-dev-environment-48db500d9b86)
+- 📖 [Sử dụng AdBlocking trong môi trường Dev](https://andreicioara.com/use-adblocking-in-your-dev-environment-48db500d9b86)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
 ---
 
 ## Webfonts
 
 > [!NOTE]
-> Using web fonts may cause Flash Of Unstyled Text/Flash Of Invisible Text - consider having fallback fonts
-> and/or utilizing web font loaders to control behavior.
+> Sử dụng web font có thể gây Flash Of Unstyled Text / Flash Of Invisible Text – cân nhắc font fallback và/hoặc web font loader để kiểm soát.
 
 - 📖 [Google Technical considerations about webfonts](https://developers.google.com/fonts/docs/technical_considerations)
 
-- [ ] **Webfont format:** ![High][high_img] WOFF, WOFF2 and TTF are supported by all modern browsers.
+- [ ] **Định dạng Webfont:** ![High][high_img] WOFF, WOFF2 và TTF được hỗ trợ bởi các trình duyệt hiện đại.
 
-- 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/woff).
-- 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](https://caniuse.com/woff2).
-- 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/ttf)
-- 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
+- 📖 [WOFF – Caniuse](https://caniuse.com/woff)
+- 📖 [WOFF2 – Caniuse](https://caniuse.com/woff2)
+- 📖 [TTF/OTF – Caniuse](https://caniuse.com/ttf)
+- 📖 [Using @font-face – CSS‑Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
-- [ ] **Webfont size:** ![High][high_img] Webfont sizes don't exceed 2 MB (all variants included).
+- [ ] **Kích thước Webfont:** ![High][high_img] Tổng kích thước webfont không vượt quá 2 MB (bao gồm mọi biến thể).
 
-- [ ] **Webfont loader:** ![Low][low_img] Control loading behavior with a webfont loader
+- [ ] **Webfont loader:** ![Low][low_img] Kiểm soát hành vi tải với webfont loader.
 
 - 🛠 [Typekit Web Font Loader](https://github.com/typekit/webfontloader)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
 ---
 
 ## CSS
 
-> **Notes:** Take a look at [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/)
-> followed by most Front-End developers. If you have a doubt about CSS properties, you can visit
-> [CSS Reference](http://cssreference.io/). There is also a short [Code Guide](http://codeguide.co/) for consistency.
+> **Ghi chú:** Tham khảo [CSS guidelines](https://cssguidelin.es/) và [Sass Guidelines](https://sass-guidelin.es/) được nhiều lập trình viên Front‑End theo. Nếu phân vân thuộc tính CSS, xem [CSS Reference](http://cssreference.io/). Cũng có [Code Guide](http://codeguide.co/) ngắn gọn cho tính nhất quán.
 
-- [ ] **Responsive Web Design:** ![High][high_img] The website is using responsive web design.
-- [ ] **CSS Print:** ![Medium][medium_img] A print stylesheet is provided and is correct on each page.
-- [ ] **Preprocessors:** ![Low][low_img] Your project is using a CSS preprocessor (e.g [Sass](http://sass-lang.com/),
-      [Less](http://lesscss.org/), [Stylus](http://stylus-lang.com/)).
-- [ ] **Unique ID:** ![High][high_img] If IDs are used, they are unique to a page.
-- [ ] **Reset CSS:** ![High][high_img] A CSS reset (reset, normalize or reboot) is used and up to date. _(If you are
-      using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)_
+- [ ] **Thiết kế web đáp ứng:** ![High][high_img] Website sử dụng responsive.
+- [ ] **CSS in Print:** ![Medium][medium_img] Stylesheet in cho máy in được cung cấp và đúng trên mỗi trang.
+- [ ] **Tiền xử lý:** ![Low][low_img] Dự án dùng CSS preprocessor (vd. [Sass](http://sass-lang.com/), [Less](http://lesscss.org/), [Stylus](http://stylus-lang.com/)).
+- [ ] **ID duy nhất:** ![High][high_img] Nếu dùng ID, chúng là duy nhất trên trang.
+- [ ] **Reset CSS:** ![High][high_img] Sử dụng reset (reset, normalize hoặc reboot) và cập nhật.
 
 - 📖 [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
 - 📖 [Normalize.css](https://necolas.github.io/normalize.css/)
 - 📖 [Reboot](https://getbootstrap.com/docs/4.0/content/reboot/)
 
-- [ ] **JS prefix:** ![Low][low_img] All classes (or id- used in JavaScript files) begin with **js-** and are not styled
-      into the CSS files.
+- [ ] **Tiền tố JS:** ![Low][low_img] Tất cả class (hoặc id) dùng trong JS bắt đầu bằng **js-** và không được style trong CSS.
 
 ```html
 <div id="js-slider" class="my-slider">
-  <!-- Or -->
+  <!-- Hoặc -->
   <div id="id-used-by-cms" class="js-slider my-slider"></div>
 </div>
 ```
 
-- [ ] **embedded or inline CSS:** ![High][high_img] Avoid at all cost embedding CSS in `<style>` tags or using inline
-      CSS: only use for valid reasons (e.g. background-image for slider, critical CSS).
-- [ ] **Vendor prefixes:** ![High][high_img] CSS vendor prefixes are used and are generated accordingly with your
-      browser support compatibility.
+- [ ] **CSS nhúng/inline:** ![High][high_img] Tránh nhúng CSS trong `<style>` hoặc inline trừ lý do chính đáng (vd. hình nền slider, CSS quan trọng).
+- [ ] **Tiền tố vendor:** ![High][high_img] Tiền tố vendor được dùng và sinh ra theo hỗ trợ trình duyệt.
 
 - 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
 
-### Performance
+### Hiệu năng
 
-- [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file _(Not for HTTP/2)_.
-- [ ] **Minification:** ![High][high_img] All CSS files are minified.
-- [ ] **Non-blocking:** ![Medium][medium_img] CSS files need to be non-blocking to prevent the DOM from taking time to
-      load.
+- [ ] **Gộp file:** ![High][high_img] File CSS được gộp thành một _(Không áp dụng HTTP/2)_.
+- [ ] **Nén:** ![High][high_img] Tất cả CSS được nén.
+- [ ] **Không chặn:** ![Medium][medium_img] File CSS cần non‑blocking để DOM không bị trì hoãn.
 
 - 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
-- 📖 [Example of preload CSS using loadCSS](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
+- 📖 [Ví dụ preload CSS bằng loadCSS](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
 
-- [ ] **Unused CSS:** ![Low][low_img] Remove unused CSS.
+- [ ] **CSS không dùng:** ![Low][low_img] Xoá CSS không sử dụng.
 
 - 🛠 [UnCSS Online](https://uncss-online.com/)
 - 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
 - 🛠 [PurgeCSS](https://github.com/FullHuman/purgecss)
 - 🛠 [Chrome DevTools Coverage](https://developer.chrome.com/docs/devtools/coverage/)
 
-### CSS testing
+### Kiểm thử CSS
 
-- [ ] **Stylelint:** ![High][high_img] All CSS or SCSS files are without any errors.
+- [ ] **Stylelint:** ![High][high_img] Không lỗi stylelint trong CSS/SCSS.
 
-- 🛠 [stylelint, a CSS linter](https://stylelint.io/)
+- 🛠 [stylelint](https://stylelint.io/)
 - 📖 [Sass guidelines](https://sass-guidelin.es/)
 
-- [ ] **Responsive web design:** ![High][high_img] All pages were tested at the following breakpoints: 320px, 768px,
-      1024px (can be more / different according to your analytics). **Responsive Checker -**
+- [ ] **Thiết kế web đáp ứng:** ![High][high_img] Tất cả trang được test ở các breakpoint: 320px, 768px, 1024px (có thể khác theo analytics).
 
   - 🛠 [Am I Responsive?](http://ami.responsivedesign.is/)
   - 🛠 [Mobile Friendly Test](https://search.google.com/test/mobile-friendly)
-  - 🛠 [Responsive Website Design Tester](https://responsivedesignchecker.com/)
+  - 🛠 [Responsive Design Checker](https://responsivedesignchecker.com/)
 
-- [ ] **CSS Validator:** ![Medium][medium_img] The CSS was tested and pertinent errors were corrected.
+- [ ] **Trình xác thực CSS:** ![Medium][medium_img] CSS được kiểm thử và sửa lỗi.
 
 - 🛠 [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-- [ ] **Desktop Browsers:** ![High][high_img] All pages were tested on all current desktop browsers (Safari, Firefox,
-      Chrome, Internet Explorer, EDGE...).
-- [ ] **Mobile Browsers:** ![High][high_img] All pages were tested on all current mobile browsers (Native browser,
-      Chrome, Safari...).
-- [ ] **OS:** ![High][high_img] All pages were tested on all current OS (Windows, Android, iOS, Mac...).
+- [ ] **Trình duyệt desktop:** ![High][high_img] Kiểm thử trên mọi trình duyệt desktop hiện tại (Safari, Firefox, Chrome, IE, EDGE...).
+- [ ] **Trình duyệt mobile:** ![High][high_img] Kiểm thử trên mọi trình duyệt mobile hiện tại (Native, Chrome, Safari...).
+- [ ] **Hệ điều hành:** ![High][high_img] Kiểm thử trên mọi OS hiện tại (Windows, Android, iOS, Mac...).
 
-- [ ] **Design fidelity:** ![Low][low_img] Depending on the project and the quality of the creatives, you may be asked
-      to be close to the design. You can use some tools to compare creatives with your code implementation and ensure
-      consistency.
+- [ ] **Độ chính xác thiết kế:** ![Low][low_img] Tuỳ dự án, có thể cần sát với thiết kế. Dùng công cụ so sánh.
 
-> [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
+> [Pixel Perfect – Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 
-- [ ] **Reading direction:** ![High][high_img] All pages need to be tested for LTR and RTL languages if they need to be
-      supported.
+- [ ] **Hướng đọc:** ![High][high_img] Kiểm thử cho ngôn ngữ LTR và RTL nếu cần hỗ trợ.
 
-- 📖
-  [Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
-- 📖
-  [Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
+- 📖 [Building RTL‑Aware Web Apps & Websites: Phần 1](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
+- 📖 [Phần 2](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
 ---
 
-## Images
+## Hình ảnh
 
-> **Notes:** For a complete understanding of image optimization, check the free ebook
-> **[Essential Image Optimization](https://images.guide/)** from Addy Osmani.
+> **Ghi chú:** Để hiểu đầy đủ tối ưu hình ảnh, xem ebook miễn phí **[Essential Image Optimization](https://images.guide/)** của Addy Osmani.
 
-### Best practices
+### Thực hành tốt
 
-- [ ] **Optimization:** ![High][high_img] All images are optimized to be rendered in the browser. WebP format could be
-      used for critical pages (like Homepage).
+- [ ] **Tối ưu:** ![High][high_img] Tất cả hình ảnh được tối ưu cho trình duyệt. Có thể dùng WebP cho trang quan trọng.
 
 - 🛠 [Imagemin](https://github.com/imagemin/imagemin)
-- 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
-- 🛠 Use [KeyCDN Image Processing](https://www.keycdn.com/support/image-processing) for image optimization in real time.
-- 🛠 [TinyPNG](https://tinypng.com/) optimises png, apng (animated png) and jpg images with very small loss in quality.
-  Free and paid version available.
-- 🛠 [ZorroSVG](http://quasimondo.com/ZorroSVG/) jpg-like compression for transparent images using svg masking.
-- 🛠 [SVGO](https://github.com/svg/svgo) a Nodejs-based tool for optimizing SVG vector graphics files.
-- 🛠 [SVGOMG](https://jakearchibald.github.io/svgomg/) a web-based GUI version of SVGO for optimising your svgs online.
+- 🛠 [ImageOptim](https://imageoptim.com/)
+- 🛠 [KeyCDN Image Processing](https://www.keycdn.com/support/image-processing)
+- 🛠 [TinyPNG](https://tinypng.com/)
+- 🛠 [ZorroSVG](http://quasimondo.com/ZorroSVG/)
+- 🛠 [SVGO](https://github.com/svg/svgo)
+- 🛠 [SVGOMG](https://jakearchibald.github.io/svgomg/)
 
-- [ ] **Picture/Srcset:** ![Medium][medium_img] You use picture/srcset to provide the most appropriate image for the
-      current viewport of the user.
+- [ ] **Picture/Srcset:** ![Medium][medium_img] Sử dụng picture/srcset để cung cấp ảnh phù hợp viewport.
 
-- 📖 [How to Build Responsive Images with srcset](https://www.sitepoint.com/how-to-build-responsive-images-with-srcset/)
+- 📖 [Xây dựng ảnh đáp ứng với srcset](https://www.sitepoint.com/how-to-build-responsive-images-with-srcset/)
 
-- [ ] **Retina:** ![Low][low_img] You provide layout images 2x or 3x, support retina display.
-- [ ] **Sprite:** ![Medium][medium_img] Small images are in a sprite file (in the case of icons, they can be in an SVG
-      sprite image).
-- [ ] **Width and Height:** ![High][high_img] Set `width` and `height` attributes on `<img>` if the final rendered image
-      size is known (can be omitted for CSS sizing).
-- [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describes the image visually.
+- [ ] **Retina:** ![Low][low_img] Cung cấp ảnh 2x hoặc 3x cho màn hình retina.
+- [ ] **Sprite:** ![Medium][medium_img] Ảnh nhỏ được gộp sprite (biểu tượng có thể dùng SVG sprite).
+- [ ] **Width và Height:** ![High][high_img] Đặt thuộc tính `width` và `height` trên `<img>` nếu biết kích thước cuối cùng.
+- [ ] **Văn bản thay thế:** ![High][high_img] Mọi `<img>` có văn bản thay thế mô tả hình.
 
-- 📖 [Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
+- 📖 [Alt-texts: Hướng dẫn toàn diện](https://axesslab.com/alt-texts/)
 
-- [ ] **Lazy loading:** ![Medium][medium_img] Images are lazyloaded (A noscript fallback is always provided).
+- [ ] **Lazy loading:** ![Medium][medium_img] Ảnh được lazyload (luôn có noscript fallback).
   - 🛠 [Native lazy loading polyfill](https://github.com/mfranzke/loading-attribute-polyfill/)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
 ---
 
 ## JavaScript
 
-### Best practices
+### Thực hành tốt
 
-- [ ] **JavaScript Inline:** ![High][high_img] You don't have any JavaScript code inline (mixed with your HTML code).
-- [ ] **Concatenation:** ![High][high_img] JavaScript files are concatenated.
-- [ ] **Minification:** ![High][high_img] JavaScript files are minified (you can add the `.min` suffix).
+- [ ] **JavaScript inline:** ![High][high_img] Không có JS inline.
+- [ ] **Gộp file:** ![High][high_img] File JS được gộp.
+- [ ] **Nén:** ![High][high_img] File JS được nén (thêm hậu tố `.min`).
 
-- 📖 [Minify Resources (HTML, CSS, and JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
+- 📖 [Minify Resources](https://developers.google.com/speed/docs/insights/MinifyResources)
 
-- [ ] **JavaScript security:** ![High][high_img]
+- [ ] **Bảo mật JS:** ![High][high_img]
 
-- 📖
-  [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)
+- 📖 [Hướng dẫn phát triển ứng dụng bảo mật với JS](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)
 
-- [ ] **`noscript` tag:** ![Medium][medium_img] Use `<noscript>` tag in the HTML body if a script type on the page is
-      unsupported or if scripting is currently turned off in the browser. This will be helpful in client-side rendering
-      heavy apps such as React.js, see
-      [examples](https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498).
+- [ ] **Thẻ `noscript`:** ![Medium][medium_img] Sử dụng `<noscript>` nếu script không được hỗ trợ hoặc bị tắt.
 
 ```html
-<noscript> You need to enable JavaScript to run this app. </noscript>
+<noscript>Bạn cần bật JavaScript để chạy ứng dụng này.</noscript>
 ```
 
-- [ ] **Non-blocking:** ![Medium][medium_img] JavaScript files are loaded asynchronously using `async` or deferred using
-      `defer` attribute.
+- [ ] **Không chặn:** ![Medium][medium_img] File JS được tải async (`async`) hoặc hoãn (`defer`).
 
-- 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
+- 📖 [Remove Render‑Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
 
-- [ ] **Optimized and updated JS libraries:** ![Medium][medium_img] All JavaScript libraries used in your project are
-      necessary (prefer Vanilla Javascript for simple functionalities), updated to their latest version and don't
-      overwhelm your JavaScript with unnecessary methods.
+- [ ] **Thư viện JS tối ưu và cập nhật:** ![Medium][medium_img] Thư viện JS cần thiết, phiên bản mới nhất, tránh thừa.
 
 - 📖 [You may not need jQuery](http://youmightnotneedjquery.com/)
-- 📖 [Vanilla JavaScript for building powerful web applications](https://plainjs.com/)
+- 📖 [Plain JS](https://plainjs.com/)
 
-- [ ] **Modernizr:** ![Low][low_img] If you need to target some specific features you can use a custom Modernizr to add
-      classes in your `<html>` tag.
+- [ ] **Modernizr:** ![Low][low_img] Nếu cần, dùng Modernizr tuỳ chỉnh để thêm class vào `<html>`.
 
-- 🛠 [Customize your Modernizr](https://modernizr.com/download?setclasses)
+- 🛠 [Tùy chỉnh Modernizr](https://modernizr.com/download?setclasses)
 
-### JavaScript testing
+### Kiểm thử JavaScript
 
-- [ ] **ESLint:** ![High][high_img] No errors are flagged by ESLint (based on your configuration or standards rules).
+- [ ] **ESLint:** ![High][high_img] Không lỗi ESLint.
 
-- 📖 [ESLint - The pluggable linting utility for JavaScript and JSX](https://eslint.org/)
+- 📖 [ESLint](https://eslint.org/)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
 ---
 
-## Security
+## Bảo mật
 
-### Scan and check your web site
+### Quét và kiểm tra website
 
 - [securityheaders.io](https://securityheaders.io/)
 - [Observatory by Mozilla](https://observatory.mozilla.org/)
 
-### Best practices
+### Thực hành tốt
 
-- [ ] **HTTPS:** ![High][high_img] HTTPS is used on every page and for all external content (plugins, images...).
+- [ ] **HTTPS:** ![High][high_img] HTTPS được dùng trên mọi trang và cho mọi nội dung ngoài.
 
-- 🛠 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
+- 🛠 [Let's Encrypt](https://letsencrypt.org/)
 - 🛠 [Free SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
 - 📖 [Strict Transport Security](http://caniuse.com/#feat=stricttransportsecurity)
 
-- [ ] **HTTP Strict Transport Security (HSTS):** ![Medium][medium_img] The HTTP header is set to
-      'Strict-Transport-Security'.
+- [ ] **HTTP Strict Transport Security (HSTS):** ![Medium][medium_img] Header `Strict-Transport-Security` được thiết lập.
 
-- 🛠 [Check HSTS preload status and eligibility](https://hstspreload.org/)
-- 📖
-  [HTTP Strict Transport Security Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html)
-- 📖
-  [Transport Layer Protection Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html)
+- 🛠 [Kiểm tra HSTS preload](https://hstspreload.org/)
+- 📖 [HSTS Cheat Sheet – OWASP](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html)
 
-- [ ] **Cross Site Request Forgery (CSRF):** ![High][high_img] You ensure that requests made to your server-side are
-      legitimate and originate from your website / app to prevent CSRF attacks.
+- [ ] **CSRF:** ![High][high_img] Đảm bảo yêu cầu tới server hợp lệ để ngăn CSRF.
 
-- 📖
-  [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
+- 📖 [CSRF Prevention Cheat Sheet – OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
 
-- [ ] **Cross Site Scripting (XSS):** ![High][high_img] Your page or website is free from XSS possible issues.
+- [ ] **XSS:** ![High][high_img] Trang không có lỗ hổng XSS.
 
-- 📖
-  [XSS (Cross Site Scripting) Prevention Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
-- 📖
-  [DOM based XSS Prevention Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html)
+- 📖 [XSS Prevention Cheat Sheet – OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
 
-- [ ] **Content Type Options:** ![Medium][medium_img] Prevents Google Chrome and Internet Explorer from trying to
-      mime-sniff the content-type of a response away from the one being declared by the server.
+- [ ] **Content Type Options:** ![Medium][medium_img] Ngăn Chrome & IE sniff MIME ngoài khai báo.
 
-- 📖
-  [X-Content-Type-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options)
+- 📖 [X-Content-Type-Options – Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options)
 
-- [ ] **X-Frame-Options (XFO):** ![Medium][medium_img] Protects your visitors against clickjacking attacks.
+- [ ] **X-Frame-Options:** ![Medium][medium_img] Bảo vệ khỏi clickjacking.
 
-- 📖 [X-Frame-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options)
-- 📖 [RFC7034 - HTTP Header Field X-Frame-Options](https://tools.ietf.org/html/rfc7034)
+- 📖 [X-Frame-Options – Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options)
 
-- [ ] **Content Security Policy:** ![Medium][medium_img] Defines how content is loaded on your site and from where it is
-      permitted to be loaded. Can also be used to protect against clickjacking attacks.
+- [ ] **Content Security Policy:** ![Medium][medium_img] Xác định cách và nguồn tải nội dung.
 
-- 📖
-  [Content Security Policy - An Introduction - Scott Helme](https://scotthelme.co.uk/content-security-policy-an-introduction/)
-- 📖 [CSP Cheat Sheet - Scott Helme](https://scotthelme.co.uk/csp-cheat-sheet/)
-- 📖 [CSP Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html)
-- 📖 [Content Security Policy Reference](https://content-security-policy.com/)
+- 📖 [Content Security Policy – Scott Helme](https://scotthelme.co.uk/content-security-policy-an-introduction/)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
 ---
 
-## Performance
+## Hiệu năng
 
-### Best practices
+### Thực hành tốt
 
-- [ ] **Goals to achieve:** ![Medium][medium_img] Your pages should reach these goals:
+- [ ] **Mục tiêu đạt được:** ![Medium][medium_img] Trang nên đạt:
+  - First Meaningful Paint < 1 s
+  - Time To Interactive < 5 s trên cấu hình trung bình (Android $200, 3G chậm) và < 2 s cho lần truy cập lại
+  - Kích thước file quan trọng < 170 KB gzip
 
-  - First Meaningful Paint under 1 second
-  - Time To Interactive under 5 seconds for the "average" configuration (a $200 Android on a slow 3G network with 400ms
-    RTT and 400kbps transfer speed) and under 2 seconds for repeat visits
-  - Critical file size under 170Kb gzipped
-
-- 🛠 [Website Page Analysis](https://tools.pingdom.com)
+- 🛠 [Pingdom Tools](https://tools.pingdom.com)
 - 🛠 [WebPageTest](https://www.webpagetest.org/)
-- 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
-- [ ] **Minified HTML:** ![Medium][medium_img] Your HTML is minified.
+- [ ] **HTML nén:** ![Medium][medium_img] HTML được nén.
 
-- [ ] **Lazy loading:** ![Medium][medium_img] Images, scripts and CSS need to be lazy loaded to improve the response
-      time of the current page (See details in their respective sections).
+- [ ] **Lazy loading:** ![Medium][medium_img] Ảnh, script, CSS được lazyload.
 
-- [ ] **Cookie size:** ![Medium][medium_img] If you are using cookies be sure each cookie doesn't exceed 4096 bytes and
-      your domain name doesn't have more than 20 cookies.
+- [ ] **Kích thước cookie:** ![Medium][medium_img] Mỗi cookie ≤ 4096 byte và domain ≤ 20 cookie.
 
-- 📖 [Cookie specification: RFC 6265](https://tools.ietf.org/html/rfc6265)
-- 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
-- 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
+- 📖 [Cookie specification: RFC 6265](https://tools.ietf.org/html/rfc6265)
 
-- [ ] **Third party components:** ![Medium][medium_img] Third party iframes or components relying on external JS (like
-      sharing buttons) are replaced by static components when possible, thus limiting calls to external APIs and keeping
-      your user's activity private.
+- [ ] **Thành phần bên thứ ba:** ![Medium][medium_img] iframe/JS bên ngoài được thay bằng thành phần tĩnh khi có thể.
 
 - 🛠 [Simple sharing buttons generator](https://simplesharingbuttons.com/)
 
-### Preparing upcoming requests
+### Chuẩn bị yêu cầu sắp tới
 
-- 📖 [Explanation of the following techniques](https://css-tricks.com/prefetching-preloading-prebrowsing/)
+- 📖 [Giải thích các kỹ thuật](https://css-tricks.com/prefetching-preloading-prebrowsing/)
 
-- [ ] **DNS resolution:** ![Low][low_img] DNS of third-party services that may be needed are resolved in advance during
-      idle time using `dns-prefetch`.
+- [ ] **DNS Prefetch:** ![Low][low_img]
 
 ```html
 <link rel="dns-prefetch" href="https://example.com" />
 ```
 
-- [ ] **Preconnection:** ![Low][low_img] DNS lookup, TCP handshake and TLS negotiation with services that will be needed
-      soon is done in advance during idle time using `preconnect`.
+- [ ] **Preconnect:** ![Low][low_img]
 
 ```html
 <link rel="preconnect" href="https://example.com" />
 ```
 
-- [ ] **Prefetching:** ![Low][low_img] Resources that will be needed soon (e.g. lazy loaded images) are requested in
-      advance during idle time using `prefetch`.
+- [ ] **Prefetch:** ![Low][low_img]
 
 ```html
 <link rel="prefetch" href="image.png" />
 ```
 
-- [ ] **Preloading:** ![Low][low_img] Resources needed in the current page (e.g. scripts placed at the end of `<body>`)
-      in advance using `preload`.
+- [ ] **Preload:** ![Low][low_img]
 
 ```html
 <link rel="preload" href="app.js" />
 ```
 
-- 📖
-  [Difference between prefetch and preload](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
+- 📖 [Khác biệt giữa prefetch và preload](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
 
-### Performance testing
+### Kiểm thử hiệu năng
 
-- [ ] **Google PageSpeed:** ![High][high_img] All your pages were tested (not only the homepage) and have a score of at
-      least 90/100.
+- [ ] **Google PageSpeed:** ![High][high_img] Tất cả trang đạt ≥ 90/100.
 
-- 🛠 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
-- 🛠 [Test your mobile speed with Google](https://testmysite.withgoogle.com)
-- 🛠 [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
-- 🛠 [GTmetrix - Website speed and performance optimization](https://gtmetrix.com/)
-- 🛠 [Speedrank - Improve the performance of your website](https://speedrank.app/)
+- 🛠 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- 🛠 [Test My Site](https://testmysite.withgoogle.com)
+- 🛠 [WebPagetest](https://www.webpagetest.org/)
+- 🛠 [GTmetrix](https://gtmetrix.com/)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
-## Accessibility
+## Khả năng truy cập (Accessibility)
 
-> **Notes:** You can watch the playlist
-> [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
+> **Ghi chú:** Xem playlist [A11ycasts với Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
 
-### Best practices
+### Thực hành tốt
 
-- [ ] **Progressive enhancement:** ![Medium][medium_img] Major functionality like main navigation and search should work
-      without JavaScript enabled.
+- [ ] **Progressive enhancement:** ![Medium][medium_img] Chức năng chính như navigation và search hoạt động khi tắt JS.
 
-- 📖 [Enable / Disable JavaScript in Chrome Developer Tools](https://www.youtube.com/watch?v=kBmvq2cE0D8)
+- 📖 [Bật/tắt JavaScript trong DevTools](https://www.youtube.com/watch?v=kBmvq2cE0D8)
 
-- [ ] **Color contrast:** ![Medium][medium_img] Color contrast should at least pass WCAG AA (AAA for mobile).
+- [ ] **Tương phản màu:** ![Medium][medium_img] Tương phản đạt tối thiểu WCAG AA (AAA cho mobile).
 
 - 🛠 [Contrast ratio](https://www.siegemedia.com/contrast-ratio)
 
-#### Headings
+#### Tiêu đề
 
-- [ ] **H1:** ![High][high_img] All pages have an H1 which is not the title of the website.
-- [ ] **Headings:** ![High][high_img] Headings should be used properly and in the right order (H1 to H6).
+- [ ] **H1:** ![High][high_img] Mọi trang có H1 không phải tiêu đề website.
+- [ ] **Tiêu đề:** ![High][high_img] Sử dụng tiêu đề đúng thứ tự H1–H6.
 
-- 📹
-  [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
+- 📹 [Tại sao tiêu đề & landmark quan trọng – A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
-### Semantics
+### Ngữ nghĩa
 
-- [ ] **Specific HTML5 input types are used:** ![Medium][medium_img] This is especially important for mobile devices
-      that show customized keypads and widgets for different types.
+- [ ] **Loại input HTML5 cụ thể:** ![Medium][medium_img] Quan trọng cho mobile hiển thị bàn phím phù hợp.
 
 - 📖 [Mobile Input Types](http://mobileinputtypes.com/)
 
-### Form
+### Biểu mẫu
 
-- [ ] **Label:** ![High][high_img] A label is associated with each input form element. In case a label can't be
-      displayed, use `aria-label` instead.
+- [ ] **Label:** ![High][high_img] Mỗi input có label. Nếu không hiển thị được, dùng `aria-label`.
 
-- 📖
-  [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
+- 📖 [aria-label – MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
 
-### Accessibility testing
+### Kiểm thử khả năng truy cập
 
-- [ ] **Accessibility standards testing:** ![High][high_img] Use the WAVE tool to test if your page respects the
-      accessibility standards.
+- [ ] **Chuẩn A11y:** ![High][high_img] Dùng WAVE để kiểm thử.
 
-- 🛠 [Wave testing](http://wave.webaim.org/)
+- 🛠 [WAVE](http://wave.webaim.org/)
 
-- [ ] **Keyboard navigation:** ![High][high_img] Test your website using only your keyboard in a previsible order. All
-      interactive elements are reachable and usable.
-- [ ] **Screen-reader:** ![Medium][medium_img] All pages were tested in a screen-reader (VoiceOver, ChromeVox, NVDA or
-      Lynx).
-- [ ] **Focus style:** ![High][high_img] If the focus is disabled, it is replaced by visible state in CSS.
+- [ ] **Điều hướng bàn phím:** ![High][high_img] Kiểm thử chỉ với bàn phím theo thứ tự dự đoán.
+- [ ] **Trình đọc màn hình:** ![Medium][medium_img] Kiểm thử với screen reader (VoiceOver, ChromeVox, NVDA, Lynx).
+- [ ] **Focus style:** ![High][high_img] Nếu focus bị tắt, thay bằng trạng thái hiển thị trong CSS.
 
-- 📹
-  [Managing Focus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
+- 📹 [Managing Focus – A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
 ## SEO
 
-- [ ] **Google Analytics:** ![Low][low_img] Google Analytics is installed and correctly configured.
+- [ ] **Google Analytics:** ![Low][low_img] GA được cài đặt đúng.
 
 - 🛠 [Google Analytics](https://analytics.google.com/analytics/web/)
-- 🛠 [GA Checker (and others)](http://www.gachecker.com/)
+- 🛠 [GA Checker](http://www.gachecker.com/)
 
-- [ ] **Search Console:** ![Low][low_img] Search Console is installed and correctly configured. It is a free service
-      offered by Google that helps you monitor, maintain, and troubleshoot your site's presence in Google Search
-      results.
+- [ ] **Search Console:** ![Low][low_img] Search Console được cài đặt đúng.
 
 - 🛠 [Search Console](https://search.google.com/search-console/about)
 
-- [ ] **Headings logic:** ![Medium][medium_img] Heading text helps to understand the content in the current page.
+- [ ] **Logic tiêu đề:** ![Medium][medium_img] Tiêu đề giúp hiểu nội dung trang.
 
-- 🛠 [Tota11y, tab Headings](http://khan.github.io/tota11y/#Try-it)
+- 🛠 [Tota11y – tab Headings](http://khan.github.io/tota11y/#Try-it)
 
-- [ ] **sitemap.xml:** ![High][high_img] A sitemap.xml exists and was submitted to Google Search Console (previously
-      Google Webmaster Tools).
+- [ ] **sitemap.xml:** ![High][high_img] sitemap.xml tồn tại và gửi lên Search Console.
 
 - 🛠 [Sitemap generator](https://websiteseochecker.com/html-sitemap-generator/)
 
-- [ ] **robots.txt:** ![High][high_img] The robots.txt is not blocking webpages.
+- [ ] **robots.txt:** ![High][high_img] robots.txt không chặn trang quan trọng.
 
-- 🛠 Test your robots.txt with [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
+- 🛠 [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
 
-- [ ] **Structured Data:** ![High][high_img] Pages using structured data are tested and are without errors. Structured
-      data helps crawlers understand the content in the current page.
+- [ ] **Structured Data:** ![High][high_img] Trang dùng structured data không lỗi.
 
-- 📖
-  [Introduction to Structured Data - Search - Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
+- 📖 [Giới thiệu Structured Data](https://developers.google.com/search/docs/guides/intro-structured-data)
 - 📖 [JSON-LD](https://json-ld.org/)
 - 📖 [Microdata](https://www.w3.org/TR/microdata/)
-- 🛠 Test your page with the [Rich Results Test](https://search.google.com/test/rich-results)
-- 🛠 Complete list of vocabularies that can be used as structured data.
-  [Schema.org Full Hierarchy](http://schema.org/docs/full.html)
+- 🛠 [Rich Results Test](https://search.google.com/test/rich-results)
+- 🛠 [Schema.org Full Hierarchy](http://schema.org/docs/full.html)
 
-- [ ] **Sitemap HTML:** ![Medium][medium_img] An HTML sitemap is provided and is accessible via a link in the footer of
-      your website.
+- [ ] **Sitemap HTML:** ![Medium][medium_img] Sitemap HTML được cung cấp và truy cập từ footer.
 
-- 📖 [Sitemap guidelines - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
+- 📖 [Hướng dẫn sitemap – Google Support](https://support.google.com/webmasters/answer/183668?hl=vi)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
-## Translations
+## Dịch thuật
 
-The Front-End Checklist is also available in other languages. Thanks for all translators and their awesome work!
+Danh Sách Kiểm Tra Front‑End cũng có sẵn ở ngôn ngữ khác. Cảm ơn các dịch giả!
 
-- 🇯🇵 Japanese: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
-- 🇪🇸 Spanish: [eoasakura/Front-End-Checklist-ES](https://github.com/eoasakura/Front-End-Checklist-ES)
-- 🇨🇳 Chinese: [JohnsenZhou/Front-End-Checklist](https://github.com/JohnsenZhou/Front-End-Checklist)
-- 🇰🇷 Korean: [kesuskim/Front-End-Checklist](https://github.com/kesuskim/Front-End-Checklist)
-- 🇧🇷 Portuguese: [jcezarms/Front-End-Checklist](https://github.com/jcezarms/Front-End-Checklist)
-- 🇻🇳 Vietnamese: [euclid1990/Front-End-Checklist](https://github.com/euclid1990/Front-End-Checklist)
-- 🇹🇼 Traditional Chinese: [EngineLin/Front-End-Checklist](https://github.com/EngineLin/Front-End-Checklist)
-- 🇫🇷 French: [ynizon/Front-End-Checklist](https://github.com/ynizon/Front-End-Checklist)
-- 🇷🇺 Russian: [ungear/Front-End-Checklist](https://github.com/ungear/Front-End-Checklist)
-- 🇹🇷 Turkish: [eraycetinay/Front-End-Checklist](https://github.com/eraycetinay/Front-End-Checklist)
-- 🇩🇪 German: [xfuture603/Front-End-Checklist](https://github.com/xFuture603/Front-End-Checklist)
-- 🇵🇱 Polish: [mbiesiad/Front-End-Checklist](https://github.com/mbiesiad/Front-End-Checklist)
-- 🇮🇩 Indonesian: [nniinnoo/Front-End-Checklist](https://github.com/nniinnoo/Front-End-Checklist)
+- 🇯🇵 Tiếng Nhật: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
+- 🇪🇸 Tiếng Tây Ban Nha: [eoasakura/Front-End-Checklist-ES](https://github.com/eoasakura/Front-End-Checklist-ES)
+- 🇨🇳 Tiếng Trung Giản Thể: [JohnsenZhou/Front-End-Checklist](https://github.com/JohnsenZhou/Front-End-Checklist)
+- 🇰🇷 Tiếng Hàn: [kesuskim/Front-End-Checklist](https://github.com/kesuskim/Front-End-Checklist)
+- 🇧🇷 Tiếng Bồ Đào Nha: [jcezarms/Front-End-Checklist](https://github.com/jcezarms/Front-End-Checklist)
+- 🇻🇳 Tiếng Việt: [euclid1990/Front-End-Checklist](https://github.com/euclid1990/Front-End-Checklist)
+- 🇹🇼 Tiếng Trung Phồn Thể: [EngineLin/Front-End-Checklist](https://github.com/EngineLin/Front-End-Checklist)
+- 🇫🇷 Tiếng Pháp: [ynizon/Front-End-Checklist](https://github.com/ynizon/Front-End-Checklist)
+- 🇷🇺 Tiếng Nga: [ungear/Front-End-Checklist](https://github.com/ungear/Front-End-Checklist)
+- 🇹🇷 Tiếng Thổ Nhĩ Kỳ: [eraycetinay/Front-End-Checklist](https://github.com/eraycetinay/Front-End-Checklist)
+- 🇩🇪 Tiếng Đức: [xfuture603/Front-End-Checklist](https://github.com/xFuture603/Front-End-Checklist)
+- 🇵🇱 Tiếng Ba Lan: [mbiesiad/Front-End-Checklist](https://github.com/mbiesiad/Front-End-Checklist)
+- 🇮🇩 Tiếng Indonesia: [nniinnoo/Front-End-Checklist](https://github.com/nniinnoo/Front-End-Checklist)
 
-## Support
+## Hỗ trợ
 
-If you have any question or suggestion, don't hesitate to reach me on X:
+Nếu bạn có câu hỏi hay gợi ý, hãy liên hệ tôi trên X:
 
-- [X (formerly Twitter)](https://ddias.link/x)
-- [Chat on Discord](https://ddias.link/discord)
+- [X (trước đây là Twitter)](https://ddias.link/x)
+- [Chat trên Discord](https://ddias.link/discord)
 
-## Contributors
+## Người đóng góp
 
-This project exists thanks to all the people who contribute. ([Contribute](https://github.com/thedaviddias/Front-End-Checklist/blob/main/CONTRIBUTING.md)).
+Dự án tồn tại nhờ tất cả những người đóng góp. ([Đóng góp](https://github.com/thedaviddias/Front-End-Checklist/blob/main/CONTRIBUTING.md)).
 <a href="https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors"><img src="https://opencollective.com/front-end-checklist/contributors.svg?width=890" alt="Contributors" /></a>
 
-## Backers
+## Nhà tài trợ
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/front-end-checklist#backer)]
+Cảm ơn các nhà tài trợ! 🙏 [[Trở thành nhà tài trợ](https://opencollective.com/front-end-checklist#backer)]
 
 <a href="https://opencollective.com/front-end-checklist#backers" target="_blank"><img src="https://opencollective.com/front-end-checklist/backers.svg?width=890" alt="Backers" /></a>
 
-## Sponsors
+## Nhà tài trợ chính
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
-[[Become a sponsor](https://opencollective.com/front-end-checklist#sponsor)]
+Hỗ trợ dự án bằng cách trở thành nhà tài trợ. Logo của bạn sẽ xuất hiện ở đây kèm liên kết website.
+[[Trở thành nhà tài trợ](https://opencollective.com/front-end-checklist#sponsor)]
 
 <a href="https://opencollective.com/front-end-checklist" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/1/avatar.svg" alt="Sponsors" /></a>
 
-## License
+## Giấy phép
 
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-**[⬆ back to top](#-table-of-contents)**
+**[⬆ quay lại đầu](#-muc-luc)**
 
 [low_img]: https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/refs/heads/main/data/images/priority/low.svg
 [medium_img]: https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/refs/heads/main/data/images/priority/medium.svg
 [high_img]: https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/refs/heads/main/data/images/priority/high.svg
+```
+
